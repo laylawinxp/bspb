@@ -20,6 +20,8 @@ dependencies {
     testImplementation("org.seleniumhq.selenium:selenium-java:4.51.0")
     testImplementation("org.seleniumhq.selenium:selenium-grid:4.51.0")
     testImplementation("org.assertj:assertj-core:3.27.7")
+    testImplementation("com.fasterxml.jackson.core:jackson-databind:2.22.3")
+    testImplementation("io.rest-assured:rest-assured:5.5.6")
 }
 
 tasks.test {
