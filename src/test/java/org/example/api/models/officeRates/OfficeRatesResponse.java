@@ -1,4 +1,4 @@
-package org.example.api.models;
+package org.example.api.models.officeRates;
 
 import java.util.List;
 

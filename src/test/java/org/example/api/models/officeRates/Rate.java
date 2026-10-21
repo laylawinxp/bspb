@@ -1,4 +1,4 @@
-package org.example.api.models;
+package org.example.api.models.officeRates;
 
 public class Rate {
     private double buyRate;
