@@ -1,4 +1,4 @@
-package org.example.tests;
+package org.example.tests.ui;
 
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;

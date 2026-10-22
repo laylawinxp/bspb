@@ -1,9 +1,12 @@
-package org.example.tests;
+package org.example.tests.ui;
 
 import org.example.pages.MainPage;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import io.qameta.allure.Description;
 
 public class NavigationTest extends BaseTest {
     @Test

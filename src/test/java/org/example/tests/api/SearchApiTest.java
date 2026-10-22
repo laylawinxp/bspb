@@ -1,7 +1,7 @@
-package org.example.tests;
+package org.example.tests.api;
 
-import io.qameta.allure.Step;
-import io.restassured.response.Response;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.example.api.models.search.ContentSection;
 import org.example.api.models.search.SearchResponse;
 import org.junit.jupiter.api.Test;
@@ -9,10 +9,11 @@ import org.springframework.http.HttpStatus;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import io.qameta.allure.Step;
+import io.restassured.response.Response;
 
 public class SearchApiTest extends BaseApiTest {
-    private static final String ENDPOINT = "/_next/data/hPR1lDeqHWLwL_1OcQMGW/search.json?slug=search";
+    private static final String ENDPOINT = "/_next/data/MEACIywM7rQwQfZoIdvtj/search.json?slug=search";
 
     @Test
     @Step("Проверка статус-кода эндпоинта поиска")

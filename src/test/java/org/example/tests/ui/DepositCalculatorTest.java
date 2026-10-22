@@ -1,4 +1,4 @@
-package org.example.tests;
+package org.example.tests.ui;
 
 import org.assertj.core.api.SoftAssertions;
 import org.example.components.DepositCard;

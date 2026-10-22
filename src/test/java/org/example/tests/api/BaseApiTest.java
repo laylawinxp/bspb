@@ -1,10 +1,14 @@
-package org.example.tests;
+package org.example.tests.api;
+
+import static org.example.specifications.Specifications.requestSpec;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.qameta.allure.Attachment;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+
+import org.example.config.Config;
 import org.junit.jupiter.api.BeforeAll;
 
 import static io.restassured.RestAssured.given;
@@ -15,12 +19,13 @@ public abstract class BaseApiTest {
 
     @BeforeAll
     public static void setUp() {
-        RestAssured.baseURI = BSPB_URL;
+        RestAssured.baseURI = Config.BASE_URL;
         RestAssured.useRelaxedHTTPSValidation();
     }
 
     protected Response get(String endpoint) {
         return given()
+                .spec(requestSpec())
                 .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36")
                 .when()
                 .get(endpoint)
