@@ -1,4 +1,4 @@
-package org.example;
+package org.example.tests;
 
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;
@@ -10,6 +10,6 @@ import static io.cucumber.core.options.Constants.GLUE_PROPERTY_NAME;
 @Suite
 @IncludeEngines("cucumber")
 @SelectClasspathResource("features/navigation.feature")
-@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "org.example")
+@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "org.example.steps")
 public class RunCucumberTest {
 }

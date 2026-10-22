@@ -1,15 +1,16 @@
-package org.example;
+package org.example.factory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class DriverFactory {
 
     private static final String BSPB_URL = "https://www.bspb.ru";
-    private static final Duration PAGE_LOAD_TIMEOUT = Duration.ofSeconds(30);
+    private static final Duration PAGE_LOAD_TIMEOUT = Duration.ofSeconds(TimeUnit.SECONDS.toSeconds(30));
 
     public static WebDriver createDriver() {
         ChromeOptions options = new ChromeOptions();
