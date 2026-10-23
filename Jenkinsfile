@@ -7,7 +7,6 @@ pipeline {
     }
 
     tools {
-        gradle 'gradle'
         jdk 'jdk21'
     }
 
