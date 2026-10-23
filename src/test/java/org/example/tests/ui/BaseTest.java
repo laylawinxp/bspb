@@ -1,4 +1,4 @@
-package org.example.tests;
+package org.example.tests.ui;
 
 import org.example.factory.DriverFactory;
 import org.junit.jupiter.api.AfterEach;

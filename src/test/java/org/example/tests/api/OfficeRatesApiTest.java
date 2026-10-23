@@ -1,4 +1,4 @@
-package org.example.tests;
+package org.example.tests.api;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;

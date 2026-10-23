@@ -1,4 +1,4 @@
-package org.example.tests;
+package org.example.tests.ui;
 
 import org.example.pages.MainPage;
 import org.junit.jupiter.api.Test;
