@@ -5,7 +5,11 @@ pipeline {
         timeout(time: 10, unit: 'MINUTES')
         buildDiscarder(logRotator(numToKeepStr: '7'))
     }
-
+    
+    environment {
+        USE_SELENOID = 'true'
+    }
+    
     tools {
         jdk 'jdk21'
     }
