@@ -24,10 +24,7 @@ public class DriverFactory {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920,1080");
-        options.addArguments("--headless=new");
         options.setAcceptInsecureCerts(true);
-
-        System.out.println("=== DriverFactory: USE_SELENOID=" + USE_SELENOID + ", SELENOID_URL=" + SELENOID_URL + " ===");
         
         if (USE_SELENOID) {
             try {
@@ -40,6 +37,8 @@ public class DriverFactory {
                 throw new IllegalStateException("Selenoid недоступен: " + SELENOID_URL, e);
             }
         } else {
+            options.addArguments("--headless=new");
+            
             WebDriver driver = new ChromeDriver(options);
             driver.manage().timeouts().pageLoadTimeout(PAGE_LOAD_TIMEOUT);
             return driver;
