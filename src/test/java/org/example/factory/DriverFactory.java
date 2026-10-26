@@ -25,7 +25,6 @@ public class DriverFactory {
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920,1080");
         options.addArguments("--headless=new");
-        options.setCapability("sessionTimeout", "5m");
         options.setAcceptInsecureCerts(true);
 
         System.out.println("=== DriverFactory: USE_SELENOID=" + USE_SELENOID + ", SELENOID_URL=" + SELENOID_URL + " ===");
