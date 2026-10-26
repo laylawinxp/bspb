@@ -43,6 +43,8 @@ public class DriverFactory {
             driver.manage().timeouts().pageLoadTimeout(PAGE_LOAD_TIMEOUT);
             return driver;
         }
+        System.out.println("SELENOID_URL = " + SELENOID_URL);
+        System.out.println("USE_SELENOID = " + USE_SELENOID);
     }
 
 
