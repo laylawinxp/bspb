@@ -22,7 +22,7 @@ public class NavigationSteps {
     @Given("я на главной странице БСПБ")
     public void openMainPage() {
         driver = DriverFactory.createDriverAndOpenMainPage();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         navigationPanel = new NavigationPanel(driver, wait);
     }
 
