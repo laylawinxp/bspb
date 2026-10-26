@@ -15,7 +15,7 @@ import static org.example.config.Config.*;
 
 public class DriverFactory {
 
-    private static final Duration PAGE_LOAD_TIMEOUT = Duration.ofSeconds(TimeUnit.SECONDS.toSeconds(30));
+    private static final Duration PAGE_LOAD_TIMEOUT = Duration.ofSeconds(TimeUnit.SECONDS.toSeconds(90));
 
     public static WebDriver createDriver() {
         ChromeOptions options = new ChromeOptions();
@@ -25,7 +25,7 @@ public class DriverFactory {
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920,1080");
         options.addArguments("--headless=new");
-
+        options.setCapability("sessionTimeout", "5m");
         options.setAcceptInsecureCerts(true);
 
         System.out.println("=== DriverFactory: USE_SELENOID=" + USE_SELENOID + ", SELENOID_URL=" + SELENOID_URL + " ===");
