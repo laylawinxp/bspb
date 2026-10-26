@@ -8,6 +8,7 @@ pipeline {
     
     environment {
         USE_SELENOID = 'true'
+        SELENOID_IP = '192.168.0.102'
     }
     
     tools {
@@ -25,7 +26,7 @@ pipeline {
             steps {
                 sh 'chmod +x gradlew'
 
-                sh './gradlew clean test --no-daemon -DuseSelenoid=${USE_SELENOID} -DselenoidUrl=http://192.168.0.102:4444/wd/hub'
+                sh "./gradlew clean test --no-daemon -DuseSelenoid=${USE_SELENOID} -DselenoidUrl=http://${SELENOID_IP}:4444/wd/hub"
             }
         }
     }
