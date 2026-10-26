@@ -15,7 +15,7 @@ import static org.example.config.Config.*;
 
 public class DriverFactory {
 
-    private static final Duration PAGE_LOAD_TIMEOUT = Duration.ofSeconds(TimeUnit.SECONDS.toSeconds(90));
+    private static final Duration PAGE_LOAD_TIMEOUT = Duration.ofSeconds(TimeUnit.SECONDS.toSeconds(120));
 
     public static WebDriver createDriver() {
         ChromeOptions options = new ChromeOptions();
