@@ -36,7 +36,7 @@ pipeline {
             allure includeProperties: false, jdk: '', results: [[path: 'build/allure-results']]
             archiveArtifacts artifacts: 'build/reports/tests/test/**', fingerprint: true, allowEmptyArchive: true
 
-            mail(
+            emailext(
                 to: 'laylawinxp@mail.ru',
                 subject: "Jenkins Build: ${currentBuild.fullDisplayName} - ${currentBuild.currentResult}",
                 body: """
@@ -44,7 +44,8 @@ pipeline {
                     Проект: ${env.JOB_NAME}
                     Номер сборки: ${env.BUILD_NUMBER}
                     Ссылка: ${env.BUILD_URL}
-                """
+                """,
+                attachLog: true
             )
                 
         }
