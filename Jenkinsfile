@@ -38,6 +38,7 @@ pipeline {
 
             emailext(
                 to: 'laylawinxp@mail.ru',
+                from: 'laylawinxp@mail.ru',
                 subject: "Jenkins Build: ${currentBuild.fullDisplayName} - ${currentBuild.currentResult}",
                 body: """
                     Статус сборки: ${currentBuild.currentResult}
