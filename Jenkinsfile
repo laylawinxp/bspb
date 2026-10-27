@@ -37,6 +37,7 @@ pipeline {
             archiveArtifacts artifacts: 'build/reports/tests/test/**', fingerprint: true, allowEmptyArchive: true
 
             mail(
+                to: 'laylawinxp@mail.ru',
                 subject: "Jenkins Build: ${currentBuild.fullDisplayName} - ${currentBuild.currentResult}",
                 body: """
                     Статус сборки: ${currentBuild.currentResult}
