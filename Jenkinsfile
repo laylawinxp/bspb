@@ -35,10 +35,21 @@ pipeline {
         always {
             allure includeProperties: false, jdk: '', results: [[path: 'build/allure-results']]
             archiveArtifacts artifacts: 'build/reports/tests/test/**', fingerprint: true, allowEmptyArchive: true
+
+            mail(
+                subject: "Jenkins Build: ${currentBuild.fullDisplayName} - ${currentBuild.currentResult}",
+                body: """
+                    Статус сборки: ${currentBuild.currentResult}
+                    Проект: ${env.JOB_NAME}
+                    Номер сборки: ${env.BUILD_NUMBER}
+                    Ссылка: ${env.BUILD_URL}
+                """
+            )
+                
         }
 
         failure {
-            echo 'Сборка остановлена: some tests failed'
+            echo 'Сборка остановлена с ошибкой'
         }
     }
 }
